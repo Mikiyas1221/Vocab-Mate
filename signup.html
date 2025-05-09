@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log In</title>
+    <link rel="icon" href="icons/logo.ico" type="image/ico">
+    <link rel="stylesheet" href="css/style2.css">
+    
+</head>
+<body>
+  
+<div class="container" id="container">
+	<div class="form-container sign-up-container">
+		<form action="#">
+			<h1>Create Account</h1>
+			<input type="text" placeholder="Name" required/>
+			<input type="email" placeholder="Email" required/>
+			<input type="password" placeholder="Password" required/>
+			<button>Sign Up</button>
+		</form>
+	</div>
+	<div class="form-container sign-in-container">
+        <div class="btn-back" style="margin: 15px;">
+            <a href="index.html">
+                <i>&larr; Back</i>
+            </a>
+          </div>
+		<form action="#">
+			<h1>Sign in</h1>
+			<input type="email" placeholder="Email" required/>
+			<input type="password" placeholder="Password" required/>
+			<div class="forgetpasslink"><a href="">Forgot your password?</a></div><br>
+			<button>Sign In</button>
+		</form>
+	</div>
+	<div class="overlay-container">
+		<div class="overlay">
+            <div class="btn-back">
+                <a href="index.html" style="margin: 15px; position:absolute; z-index: 2">
+                    <i>&larr; Back</i>
+                </a>
+              </div>
+			<div class="overlay-panel overlay-left">
+				<h1>Welcome Back!</h1>
+				<p>To keep connected with us please login with your personal info</p>
+				<button class="ghost" id="signIn">Sign In</button>
+			</div>
+			<div class="overlay-panel overlay-right">
+				<h1>Hello, Friend!</h1>
+				<p>Enter your personal details and start journey with us</p>
+				<button class="ghost" id="signUp">Sign Up</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="form-gap"></div>
+
+<div id="forgetpass" class="container forgetpass">
+              <div class="panel-body">
+                <div class="btn-back" style="margin: 15px;">
+                    <a href="#" onclick="window.location.reload(true);">
+                        <i>&larr; Back</i>
+                    </a>
+                  </div>
+                <div>
+                  <img src="img/lock.png" alt="" width="150px" style="margin-left:40%;">
+                  <h2>Forgot Password?</h2>
+                  <p style="margin-left: 33%;">You can reset your password here.</p>
+                    <form id="register-form" role="form" autocomplete="off" class="form" method="post">
+    
+                      <div class="form-group">
+                        <div class="input-group" style="display: flex;">
+                          <img src="img/email.png" alt="" width="36px" height="45px" style="display:flex">
+                          <input id="email" name="email" placeholder="Email address" class="form-control"  type="email" style="height: 28px;">
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <input name="recover-submit" value="Reset Password" type="submit">
+                      </div>
+                    </form>
+                </div>
+              </div>
+</div>
+
+
+<script>
+    const signUpButton = document.getElementById('signUp');
+    const signInButton = document.getElementById('signIn');
+    const container = document.getElementById('container');
+    
+    signUpButton.addEventListener('click', () => {
+        container.classList.add("right-panel-active");
+    });
+    
+    signInButton.addEventListener('click', () => {
+        container.classList.remove("right-panel-active");
+    });
+    const forgetpasslink = document.querySelector('.forgetpasslink a');
+    const forgetpass = document.getElementById('forgetpass');
+    forgetpasslink.addEventListener('click', (e) => {
+        e.preventDefault();
+        container.style.display = 'none';
+        forgetpass.style.display = 'block';
+    });
+</script>
+</body>
+</html>
